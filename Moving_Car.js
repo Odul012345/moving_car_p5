@@ -1,7 +1,7 @@
 // Car position variable
 let carX = 0;
 let carY;
-let carSpeed = 3;
+let carSpeed = 10;
 
 function setup() {
   createCanvas(800, 400);
@@ -13,9 +13,29 @@ function draw() {
   // ===== DRAW BACKGROUND =====
   // Sky (light blue)
   background(135, 206, 235);
+  // The Sun
+  fill(255, 255, 0)
+  circle(50, 50, 75);
+   
+  stroke('yellow');
+  strokeWeight(5);
 
+  line(80, 45, 180, 85);
+  line(80, 60, 150, 100);
+  line(80, 75, 120, 110);
   // ===== BEGIN BILLBOARD HERE =====
-  
+  // green sign
+  fill(102, 0, 204);
+  rect(215, 60, 200, 100)
+  textSize(32);
+  fill(255, 204, 0);
+  stroke(0);
+  strokeWeight(4);
+  text('Legends only', 220, 120);
+  fill(179, 179, 179)
+  rect(217, 160, 20, 75)
+  fill(179, 179, 179)
+  rect(393, 160, 20, 75)
   // ===== END BILLBOARD HERE =====
 
   // ===== DRAW GRASS =====
@@ -31,6 +51,9 @@ function draw() {
   strokeWeight(3);
   for (let i = 0; i < width; i += 40) {
     line(i, carY + 60, i + 20, carY + 60);
+    
+  
+    
   }
   noStroke();
 
@@ -74,4 +97,5 @@ function drawCar(x, y) {
   // Headlight (yellow)
   fill(255, 255, 0);
   circle(x + 95, y + 15, 8);
+
 }
